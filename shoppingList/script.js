@@ -5,6 +5,7 @@ button.addEventListener("click", function() {
   addToList(input);
 });
 
+
 function addToList(item) {
   let shoppingList = document.getElementById("shoppingList");
   let newPost = createAnchorTag(item);
@@ -12,6 +13,22 @@ function addToList(item) {
   shoppingList.appendChild(newPost);
 
 }
+
+function removeFromList(item){
+  //HÄR ÄR DU!!
+  //kolla på confirm
+  //koppla element som ska tas bort
+  let itemText = item.previousSibling.data;
+  let deleteItem = confirm("Är du säker på att du vill ta bort "+itemText+"?");
+  if(deleteItem){
+  //alert(itemText+" kommer tas bort");
+  }
+  else{
+    alert(itemText+" tas inte bort");
+  }
+  //alert(itemText);
+}
+
 
 function createAnchorTag(item) {
   //skapa anchor-tag
@@ -40,6 +57,6 @@ function createButtonTag() {
 }
 function setButtonAttributes(newButton){
   newButton.setAttribute("type", "close");
-  newButton.setAttribute("onclick", "alert('hej')");
+  newButton.setAttribute("onclick", "removeFromList(this)");
   newButton.setAttribute("class", "close");
 }
