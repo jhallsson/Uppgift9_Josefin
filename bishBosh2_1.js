@@ -9,12 +9,10 @@ let form = document.getElementById('inputs');
 
 form.addEventListener('submit', function(event) {
   if (form.checkValidity() === false) {
-      event.preventDefault();
       event.stopPropagation();
       //alert("failed!");
   }
     else{
-
         results.innerHTML="";
         arr=[];
         bish = +document.getElementById("bishInput").value;
@@ -26,6 +24,7 @@ form.addEventListener('submit', function(event) {
     }
     form.classList.add('was-validated');
 
+    event.preventDefault();
 
 });
 
@@ -46,8 +45,10 @@ function bishBosh() {
       arr.push(i);
     }
   }
+  let resultString="";
   arr.forEach((item, arr) => {
-    results.innerHTML += (item+"<br>"); //ändra från vertikalt?
+     resultString += (item+"<br>"); //ändra från vertikalt?
   });
+  results.innerHTML = resultString;
 //alert("inside bishbosh!");
 }
