@@ -1,6 +1,5 @@
 //let loop, bish, bosh;
 //let arr = [];
-let results = document.getElementById("result");
 let form = document.getElementById('inputs');
 
 form.addEventListener('submit', function(event) {
@@ -16,7 +15,6 @@ form.addEventListener('submit', function(event) {
 });
 function bishBosh() {
   let loop, bish, bosh;
-  results.innerHTML = "";
   bish = +document.getElementById("bishInput").value;
   bosh = +document.getElementById("boshInput").value;
   loop = +document.getElementById("loopInput").value;
@@ -42,11 +40,12 @@ function calculate(bish,bosh,loop) {
   return arr;
 }
 
-
 function writeOutResult(arr) {
-  let resultString = "";
+  let results = document.getElementById("result");
+  //results.innerHTML = "";
+  let resultString="";
   arr.forEach((item, arr) => {
-    resultString += (item + "<br>"); //ändra från vertikalt?
+    resultString += (item + "<br>");
   });
   results.innerHTML = resultString;
 }
