@@ -1,0 +1,19 @@
+body{
+background-color: #f4fefb;
+
+}
+section{
+  /* min-height: 600px; */
+  background-color: #ffdd80;
+}
+header, footer{
+  background-color: #e09107;
+  /* height: 100px; */
+}
+i{
+  font-size: 12px;
+}
+#result{
+  min-height: 300px;
+  max-height: 300px;
+}

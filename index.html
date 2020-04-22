@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Uppgift 9 - Josefin</title>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header class="p-4 text-light jumbotron-fluid">
+    <h1>Bish-Bosh 2.0</h1>
+    <p class="lead">
+      Bish-Bosh listar alla tal mellan angivet intervall!
+    </p>
+    <hr class="my-3 text-light bg-light">
+    <p>
+      Undantag: <br>
+      Om talet är jämnt delbart med 3 listas ​"Bish" ​istället ​för talet. <br>
+      Om talet är jämnt delbart med 4 listas "Bosh" ​istället ​för talet. <br>
+      Om talet är jämnt delbart med både med 3 och 4 skrivs “​Bish-Bosh​” ​istället ​för talet.
+    </p>
+
+
+
+  </header>
+  <section class="p-4 ">
+    <form class="form-inline needs-validation" id="inputs" novalidate><!--  no validate= egen validering -->
+      <div class="form-group">
+        <label for="bishInput">Bish: </label>
+        <input type="number" class="form-control ml-2" id="bishInput" placeholder="Bish..." required>
+      </div>
+      <div class="form-group mx-3">
+        <label for="boshInput">Bosh: </label>
+        <input type="number" class="form-control ml-2" id="boshInput" placeholder="Bosh..." required>
+      </div>
+      <div class="form-group mr-3">
+        <label for="loopInput">Intervall: </label>
+        <input type="number" class="form-control ml-2" id="loopInput" min="1" max="100" placeholder="Loop..." required>
+
+      <div id="feedback" class="invalid-feedback">Must be between 1-100!</div>
+     </div>
+      <button type="submit" class="btn btn-warning" id="submitButton">Bish-Bosh!</button>
+
+
+    </form>
+    <div id="result" class="overflow-auto border bg-light my-3 p-2">Resultat</div>
+  </section>
+
+  <footer class="text-center text-light pt-4 pb-2">
+    Josefin Hällsson<br>
+    <i> - En del av Övning 9 - <br>
+      &#xa9; 2020/04/21</i>
+  </footer>
+</div>
+
+  <!-- <script type="text/javascript" src="bishBosh.js"></script> -->
+  <!-- <script type="text/javascript" src="bishBosh2.js"></script> -->
+  <script type="text/javascript" src="bishBosh2_1.js"></script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+
+</body>
+
+</html>
