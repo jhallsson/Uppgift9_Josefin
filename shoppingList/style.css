@@ -1,0 +1,8 @@
+#shoppingList{
+  width: 90%;
+  min-height: 300px;
+  max-height: 300px;
+}
+div{
+  border:solid 1px;
+}
