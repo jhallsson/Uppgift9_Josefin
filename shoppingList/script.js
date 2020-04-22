@@ -12,21 +12,28 @@ function addToList(item){
   //shoppingList.innerHTML+="<div>"+input.value+"</div>";
   let shoppingList = document.getElementById("shoppingList");
 
-  let newPost = document.createElement("a");
-  newPost.setAttribute("class", "list-group-item list-group-item-action");
-  let itemText = document.createTextNode(item.value);
-  newPost.appendChild(itemText);
-  shoppingList.appendChild(newPost);
+  let newAnchor = document.createElement("a");                //skapa anchor-tag
+  newAnchor.setAttribute("class", "list-group-item list-group-item-action"); //ge klass
+
+  let newButton=document.createElement("button");             //skapa button
+  newButton.setAttribute("type", "close");                    //ge attribut
+  newButton.setAttribute("onclick", "alert('hej')");
+  newButton.setAttribute("class", "close");
+  newButton.appendChild(document.createTextNode("\u00D7"));    //lägg till krysset i button
+
+  let itemText = document.createTextNode(item.value);       //skapa text till inlägget
 
 
-  //.setAttribute("class", "democlass");
-  // newPost.appendchild(document.createTextNode(item.value));
-  // shoppingList.appendChild(newPost);
+  newAnchor.appendChild(itemText);                         //lägg till text i anchor
+  newAnchor.appendChild(newButton);                         //lägg till button i anchor
 
-//  var para = document.createElement("p");
-  //var node = document.createTextNode("This is new.");
-  //para.appendChild(node);
-  //var element = document.getElementById("div1");
-  //element.appendChild(para);
+                                                            //sätt ihop inlägget
+  shoppingList.appendChild(newAnchor);                        //lägg till i listan
 
+}
+function createAnchorTag(){
+
+}
+function createButtonTag(){
+  
 }
