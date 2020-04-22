@@ -1,4 +1,5 @@
 let button = document.getElementById("addItem");
+let shoppingList = document.getElementById("shoppingList");
 
 button.addEventListener("click", function() {
   let input = document.getElementById("listItem");
@@ -7,7 +8,6 @@ button.addEventListener("click", function() {
 
 
 function addToList(item) {
-  let shoppingList = document.getElementById("shoppingList");
   let newPost = createAnchorTag(item);
   //lägg till i listan
   shoppingList.appendChild(newPost);
@@ -16,17 +16,11 @@ function addToList(item) {
 
 function removeFromList(item){
   //HÄR ÄR DU!!
-  //kolla på confirm
-  //koppla element som ska tas bort
   let itemText = item.previousSibling.data;
   let deleteItem = confirm("Är du säker på att du vill ta bort "+itemText+"?");
   if(deleteItem){
-  //alert(itemText+" kommer tas bort");
+    shoppingList.removeChild(item.parentNode);
   }
-  else{
-    alert(itemText+" tas inte bort");
-  }
-  //alert(itemText);
 }
 
 
