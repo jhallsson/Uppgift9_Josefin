@@ -3,3 +3,10 @@
   min-height: 300px;
   max-height: 300px;
 }
+/* #removed{
+  text-decoration: line-through;
+  background-color: red;
+} */
+.bg-danger{
+  text-decoration: line-through !important; 
+}
