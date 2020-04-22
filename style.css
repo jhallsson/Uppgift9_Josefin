@@ -17,3 +17,6 @@ i{
   min-height: 300px;
   max-height: 300px;
 }
+#loopInput{
+  width:100%;
+}

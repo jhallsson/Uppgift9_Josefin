@@ -13,57 +13,62 @@
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <header class="p-4 text-light jumbotron-fluid">
-    <h1>Bish-Bosh 2.0</h1>
-    <p class="lead">
-      Bish-Bosh listar alla tal mellan angivet intervall!
-    </p>
-    <hr class="my-3 text-light bg-light">
-    <p>
-      Undantag: <br>
-      Om talet är jämnt delbart med 3 listas ​"Bish" ​istället ​för talet. <br>
-      Om talet är jämnt delbart med 4 listas "Bosh" ​istället ​för talet. <br>
-      Om talet är jämnt delbart med både med 3 och 4 skrivs “​Bish-Bosh​” ​istället ​för talet.
-    </p>
-
-
-
-  </header>
-  <section class="p-4 ">
-    <form class="form-inline needs-validation" id="inputs" novalidate><!--  no validate= egen validering -->
-      <div class="form-group">
-        <label for="bishInput">Bish: </label>
-        <input type="number" class="form-control ml-2" id="bishInput" placeholder="Bish..." required>
-      </div>
-      <div class="form-group mx-3">
-        <label for="boshInput">Bosh: </label>
-        <input type="number" class="form-control ml-2" id="boshInput" placeholder="Bosh..." required>
-      </div>
-      <div class="form-group mr-3">
-        <label for="loopInput">Intervall: </label>
-        <input type="number" class="form-control ml-2" id="loopInput" min="1" max="100" placeholder="Loop..." required>
-
-      <div id="feedback" class="invalid-feedback">Must be between 1-100!</div>
-     </div>
-      <button type="submit" class="btn btn-warning" id="submitButton">Bish-Bosh!</button>
+    <header class="p-4 text-light jumbotron-fluid">
+      <h1>Bish-Bosh 2.0</h1>
+      <p class="lead">
+        Bish-Bosh listar alla tal mellan angivet intervall!
+      </p>
+      <hr class="my-3 text-light bg-light">
+      <p>
+        Undantag: <br>
+        Om talet är jämnt delbart med 3 listas ​"Bish" ​istället ​för talet. <br>
+        Om talet är jämnt delbart med 4 listas "Bosh" ​istället ​för talet. <br>
+        Om talet är jämnt delbart med både med 3 och 4 skrivs “​Bish-Bosh​” ​istället ​för talet.
+      </p>
 
 
-    </form>
-    <div id="result" class="overflow-auto border bg-light my-3 p-2">Resultat</div>
-  </section>
 
-  <footer class="text-center text-light pt-4 pb-2">
-    Josefin Hällsson<br>
-    <i> - En del av Övning 9 - <br>
-      &#xa9; 2020/04/21</i>
-  </footer>
-</div>
+    </header>
+    <section class="p-4">
+      <form class="form-inline needs-validation align-items-end" id="inputs" novalidate>
+        <!--  no validate= egen validering -->
+        <div class="form-group col-md-3">
+          <label for="bishInput">Bish: </label>
+          <input type="number" class="form-control" id="bishInput" placeholder="Bish..." required>
+          <div id="feedback" class="invalid-feedback">Required!</div>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="boshInput">Bosh: </label>
+          <input type="number" class="form-control" id="boshInput" placeholder="Bosh..." required>
+          <div id="feedback" class="invalid-feedback">Required!</div>
+        </div>
+        <div class="form-group col-md-3">
+        <label for="loopInput">Loop: </label>
+          <input type="number" min="0" max="100" class="form-control" id="loopInput"  placeholder="Loop..." required>
 
-  <!-- <script type="text/javascript" src="bishBosh.js"></script> -->
-  <!-- <script type="text/javascript" src="bishBosh2.js"></script> -->
-  <script type="text/javascript" src="bishBosh2_1.js"></script>
+          <div id="feedback" class="invalid-feedback">Must be between 1-100!</div>
+        </div>
+        <div class="col-md">
+          <button type="submit" class="btn btn-warning" id="submitButton">Bish-Bosh!</button>
+
+        </div>
+
+
+      </form>
+      <div id="result" class="overflow-auto border bg-light my-3 p-2">Resultat</div>
+    </section>
+
+    <footer class="text-center text-light pt-4 pb-2">
+      Josefin Hällsson<br>
+      <i> - En del av Övning 9 - <br>
+        &#xa9; 2020/04/21</i>
+    </footer>
+  </div>
+
+  <script type="text/javascript" src="bishBosh.js"></script>
+  <script type="text/javascript" src="bishBosh2.js"></script>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
