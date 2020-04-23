@@ -4,7 +4,6 @@ let trimButton = document.getElementById("trimList");
 let clearButton = document.getElementById("clearList");
 let nameButton = document.getElementById("nameList");
 
-
 addButton.addEventListener("click", addToList);
 trimButton.addEventListener("click", clearRemoved);
 clearButton.addEventListener("click", clearList);
@@ -12,12 +11,51 @@ nameButton.addEventListener("click", nameList);
 
 function addToList() {
   let input = document.getElementById("listItem");
-  let newPost = createAnchorTag(input);
-  //lägg till i listan
-  shoppingList.appendChild(newPost);
+  let index = findDuplicate(input);
+  if (index!=-1) {
+    let divTag = shoppingList.children[index].firstElementChild; //Måste få ett index för den som matchade
+    divTag.classList.remove("d-none");
+    let badgeNumb = +divTag.textContent;
+    if (badgeNumb >= 2) {
+      divTag.textContent=badgeNumb+1;
+    }
+  } else {
+    let newPost = createAnchorTag(input);
+    //lägg till i listan
+    shoppingList.appendChild(newPost);
+  }
   resetFocus(input);
-
 }
+
+function findDuplicate(input) {
+  let item;
+  let boolValue=true;
+  let i=0;
+  while (boolValue) {
+    if(i < shoppingList.childElementCount){
+      item = shoppingList.children[i];
+      if (item.firstChild.textContent === input.value) {
+        boolValue=false;
+      }
+      else {i++;}
+    }
+    else{
+
+      i=-1;
+    boolValue=false;}
+  }
+return i;
+  // for (let i = 0; i < shoppingList.childElementCount; i++) {
+  //   item = shoppingList.children[i];
+  //   if (item.firstChild.textContent != input.value) {
+  //     return i;
+  //   } else {
+  //     i=-1;
+  //     return i;
+  //   }
+  // }
+}
+
 
 function removeFromList(item) {
   let itemText = item.previousSibling.data;
@@ -53,6 +91,9 @@ function resetFocus(input) {
   document.getElementById("listItem").focus();
 }
 
+//function savelist
+//if list!=0 -> localstorage.setitem ,json.stringify
+
 function createAnchorTag(item) {
   //skapa anchor-tag
   let newAnchor = document.createElement("a");
@@ -63,8 +104,18 @@ function createAnchorTag(item) {
   //lägg till text i anchor
   newAnchor.appendChild(itemText);
   //lägg till button i anchor
+  newAnchor.appendChild(createBadgeDiv());
   newAnchor.appendChild(createButtonTag());
   return newAnchor;
+}
+
+function createBadgeDiv() {
+  let newDiv = document.createElement("div");
+  //ge attribut
+  newDiv.setAttribute("class", "badge d-none");
+  //lägg till siffra i badge
+  newDiv.appendChild(document.createTextNode("2"));
+  return newDiv;
 }
 
 function createButtonTag() {
