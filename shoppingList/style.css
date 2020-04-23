@@ -1,15 +1,21 @@
+body{
+  margin: auto 10%;
+  background-color: #6287f5;
+}
+header, footer{
+  background-color:#99b3ff;
+}
+section{
+  background-color:#f0f4ff;
+}
 #shoppingList{
   width: 90%;
   min-height: 300px;
   max-height: 300px;
 }
-/* #removed{
-  text-decoration: line-through;
-  background-color: red;
-} */
-.bg-danger{
-  text-decoration: line-through !important;
-}
+
+
 .bg-secondary{
   text-decoration: line-through !important;
+  background-color: #7488c4 !important;
 }

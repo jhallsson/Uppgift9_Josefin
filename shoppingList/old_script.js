@@ -3,13 +3,20 @@ let trimButton = document.getElementById("trimList");
 let clearButton = document.getElementById("clearList");
 let shoppingList = document.getElementById("shoppingList");
 
-addButton.addEventListener("click", addToList);
-trimButton.addEventListener("click", clearRemoved);
-clearButton.addEventListener("click", clearList);
-
-function addToList() {
+addButton.addEventListener("click", function() {
   let input = document.getElementById("listItem");
-  let newPost = createAnchorTag(input);
+  addToList(input);
+});
+trimButton.addEventListener("click", function() {
+  clearRemoved();
+});
+clearButton.addEventListener("click", function() {
+  clearList();
+});
+
+
+function addToList(item) {
+  let newPost = createAnchorTag(item);
   //lägg till i listan
   shoppingList.appendChild(newPost);
 }
