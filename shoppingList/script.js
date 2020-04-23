@@ -1,9 +1,14 @@
-let button = document.getElementById("addItem");
+let addButton = document.getElementById("addItem");
+let trimButton = document.getElementById("trimList");
+let clearButton;
 let shoppingList = document.getElementById("shoppingList");
 
-button.addEventListener("click", function() {
+addButton.addEventListener("click", function() {
   let input = document.getElementById("listItem");
   addToList(input);
+});
+trimButton.addEventListener("click", function() {
+  clearRemoved();
 });
 
 function addToList(item) {
@@ -17,9 +22,14 @@ function removeFromList(item) {
   let deleteItem = confirm("Är du säker på att du vill ta bort " + itemText + "?");
   if (deleteItem) {
     let listItem = item.parentNode;
-    //listItem.setAttribute("id","removed");
-    listItem.classList.add("bg-danger");
-    //shoppingList.removeChild(item.parentNode);
+    listItem.classList.add("bg-secondary");
+  }
+}
+
+function clearRemoved() {
+  let removedItems = document.getElementsByClassName("bg-secondary");
+  while (removedItems.length > 0) {
+    shoppingList.removeChild(removedItems[0]);
   }
 }
 
