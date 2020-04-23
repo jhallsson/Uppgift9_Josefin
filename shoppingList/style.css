@@ -17,5 +17,5 @@ section{
 
 .bg-secondary{
   text-decoration: line-through !important;
-  background-color: #7488c4 !important;
+  /* background-color: #7488c4 !important; */
 }

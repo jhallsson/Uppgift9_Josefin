@@ -12,6 +12,8 @@ function addToList() {
   let newPost = createAnchorTag(input);
   //lägg till i listan
   shoppingList.appendChild(newPost);
+  input.value="";
+  input.focus();
 }
 
 function removeFromList(item) {
