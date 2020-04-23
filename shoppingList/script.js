@@ -1,19 +1,22 @@
+let shoppingList = document.getElementById("shoppingList");
 let addButton = document.getElementById("addItem");
 let trimButton = document.getElementById("trimList");
 let clearButton = document.getElementById("clearList");
-let shoppingList = document.getElementById("shoppingList");
+let nameButton = document.getElementById("nameList");
+
 
 addButton.addEventListener("click", addToList);
 trimButton.addEventListener("click", clearRemoved);
 clearButton.addEventListener("click", clearList);
+nameButton.addEventListener("click", nameList);
 
 function addToList() {
   let input = document.getElementById("listItem");
   let newPost = createAnchorTag(input);
   //lägg till i listan
   shoppingList.appendChild(newPost);
-  input.value="";
-  input.focus();
+  resetFocus(input);
+
 }
 
 function removeFromList(item) {
@@ -21,12 +24,12 @@ function removeFromList(item) {
   let deleteItem = confirm("Är du säker på att du vill ta bort " + itemText + "?");
   if (deleteItem) {
     let listItem = item.parentNode;
-    listItem.classList.add("bg-secondary");
+    listItem.classList.add("bg-info");
   }
 }
 
 function clearRemoved() {
-  let removedItems = document.getElementsByClassName("bg-secondary");
+  let removedItems = document.getElementsByClassName("bg-info");
   while (removedItems.length > 0) {
     shoppingList.removeChild(removedItems[0]);
   }
@@ -36,6 +39,18 @@ function clearList() {
   while (shoppingList.childElementCount > 0) {
     shoppingList.removeChild(shoppingList.firstElementChild);
   }
+}
+
+function nameList(){
+  let inputName = document.getElementById("listNameInput");
+  let listName = document.getElementById("listName");
+  listName.innerHTML= inputName.value;
+  resetFocus(inputName);
+}
+
+function resetFocus(input){
+  input.value="";
+  document.getElementById("listItem").focus();
 }
 
 function createAnchorTag(item) {

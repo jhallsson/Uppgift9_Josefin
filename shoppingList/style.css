@@ -14,8 +14,12 @@ section{
   max-height: 300px;
 }
 
-
-.bg-secondary{
+.bg-info{
   text-decoration: line-through !important;
   /* background-color: #7488c4 !important; */
 }
+
+/* .bg-secondary{
+  text-decoration: line-through !important;
+  background-color: #7488c4 !important;
+} */
