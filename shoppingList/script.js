@@ -1,6 +1,6 @@
 let addButton = document.getElementById("addItem");
 let trimButton = document.getElementById("trimList");
-let clearButton;
+let clearButton = document.getElementById("clearList");
 let shoppingList = document.getElementById("shoppingList");
 
 addButton.addEventListener("click", function() {
@@ -10,6 +10,10 @@ addButton.addEventListener("click", function() {
 trimButton.addEventListener("click", function() {
   clearRemoved();
 });
+clearButton.addEventListener("click", function() {
+  clearList();
+});
+
 
 function addToList(item) {
   let newPost = createAnchorTag(item);
@@ -30,6 +34,12 @@ function clearRemoved() {
   let removedItems = document.getElementsByClassName("bg-secondary");
   while (removedItems.length > 0) {
     shoppingList.removeChild(removedItems[0]);
+  }
+}
+
+function clearList(){
+  while (shoppingList.childElementCount > 0) {
+    shoppingList.removeChild(shoppingList.firstElementChild);
   }
 }
 
