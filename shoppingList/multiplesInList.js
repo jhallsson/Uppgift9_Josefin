@@ -12,16 +12,18 @@ nameButton.addEventListener("click", nameList);
 function addToList() {
   let input = document.getElementById("listItem");
   let index = findDuplicate(input);
-  if (index!=-1) {
+  if (index != -1) {
+    //lägg inte till ny
     let divTag = shoppingList.children[index].firstElementChild; //Måste få ett index för den som matchade
     divTag.classList.remove("d-none");
     let badgeNumb = +divTag.textContent;
     if (badgeNumb >= 2) {
-      divTag.textContent=badgeNumb+1;
+      //lägg på om fler än 2
+      divTag.textContent = badgeNumb + 1;
     }
   } else {
-    let newPost = createAnchorTag(input);
     //lägg till i listan
+    let newPost = createAnchorTag(input);
     shoppingList.appendChild(newPost);
   }
   resetFocus(input);
@@ -29,33 +31,23 @@ function addToList() {
 
 function findDuplicate(input) {
   let item;
-  let boolValue=true;
-  let i=0;
+  let boolValue = true;
+  let i = 0;
   while (boolValue) {
-    if(i < shoppingList.childElementCount){
+    if (i < shoppingList.childElementCount) {
       item = shoppingList.children[i];
       if (item.firstChild.textContent === input.value) {
-        boolValue=false;
+        boolValue = false;
+      } else {
+        i++;
       }
-      else {i++;}
+    } else {
+      i = -1;
+      boolValue = false;
     }
-    else{
-
-      i=-1;
-    boolValue=false;}
   }
-return i;
-  // for (let i = 0; i < shoppingList.childElementCount; i++) {
-  //   item = shoppingList.children[i];
-  //   if (item.firstChild.textContent != input.value) {
-  //     return i;
-  //   } else {
-  //     i=-1;
-  //     return i;
-  //   }
-  // }
+  return i;
 }
-
 
 function removeFromList(item) {
   let itemText = item.previousSibling.data;
@@ -112,7 +104,7 @@ function createAnchorTag(item) {
 function createBadgeDiv() {
   let newDiv = document.createElement("div");
   //ge attribut
-  newDiv.setAttribute("class", "badge d-none");
+  newDiv.setAttribute("class", "badge badge-primary d-none ml-3");
   //lägg till siffra i badge
   newDiv.appendChild(document.createTextNode("2"));
   return newDiv;
