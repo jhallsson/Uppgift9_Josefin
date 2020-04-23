@@ -22,15 +22,19 @@
         <div id="shoppingList" class=" list-group overflow-auto ">
           <a class="list-group-item list-group-item-action">Nytt i listan<button type="close" onclick="removeFromList(this)" class="close">×</button></a>
           <a class="list-group-item list-group-item-action bg-secondary">Nytt i listan<button type="close" onclick="removeFromList(this)" class="close">×</button></a>
-          <a class="list-group-item list-group-item-action bg-secondary">Nytt i listan<button type="close" onclick="removeFromList(this)" class="close">×</button></a>
+          <a class="list-group-item list-group-item-action bg-secondary">Nytt i listan
+            <!-- <button type="close" onclick="removeFromList(this)" class="close"><span>&times;</span></button> -->
+            <button class="close" data-toggle="confirmation" data-confirmation-event="removeFromList(this)" data-placement="right"><span>&times;</span></button>
+<!-- <button class="btn btn-default" data-toggle="confirmation" data-placement="right">Confirmation on right</button> -->
+          </a>
         </div>
       </div>
-      <div class="col ">
+      <!-- <div class="col ">
         <div class="container border">
           Info/Feedback
 
         </div>
-      </div>
+      </div> -->
     </div>
 
   </section>
@@ -38,12 +42,12 @@
     <div class="row p-4">
       <div class="input-group col-md-8">
         <input type="text" id="listItem" class="form-control" value="Nytt i listan" placeholder="Lägg till i listan...">
-        <div class="input-group-append">
+         <div>  <!--class='input-group-append'-->
           <button class="btn btn-outline-secondary" type="button" id="addItem">Lägg till</button>
         </div>
-        <div class="col">
-          <button class="btn btn-outline-secondary" type="button" id="trimList">Rensa listan</button>
-          <button class="btn btn-outline-secondary" type="button" id="clearList">Töm hela listan</button>
+        <div class="col-md">
+          <button class="btn btn-outline-secondary m-3 my-md-0" type="button" id="trimList">Rensa listan</button>
+          <button class="btn btn-outline-secondary m-3 my-md-0" type="button" id="clearList">Töm hela listan</button>
         </div>
       </div>
 

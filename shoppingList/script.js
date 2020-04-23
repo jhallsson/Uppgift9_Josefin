@@ -37,7 +37,7 @@ function clearRemoved() {
   }
 }
 
-function clearList(){
+function clearList() {
   while (shoppingList.childElementCount > 0) {
     shoppingList.removeChild(shoppingList.firstElementChild);
   }
